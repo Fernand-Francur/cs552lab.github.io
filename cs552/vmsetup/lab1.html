@@ -68,8 +68,19 @@ Tasks for today:
 
 		</ol>
 	</ul>
-
-<hr size="3" color="#000000" align="left">
+	<dt><h3><font color="black">Mac Computer Setup Tips</font></h3></dt>
+	<li>Your mileage may vary when it comes to setting up VirtualBox on a Mac computer. Recommendation if possible is to use a different machine running either linux or windows. If this isn't possible, some tips from previous years can help:</li>
+	<li>Old setup that worked on M1Pro using UTM</li>
+		<ol>
+			<li>brew install qemu</li>
+			<li>qemu-img convert -f vdi -O qcow2 ~/Downloads/cs552.vdi ~/Downloads/cs552.qcow2</li>
+			<li>follow this <a href="https://www.youtube.com/watch?v=enF3zbyiNZA">video</a> on using .qcow2 with UTM. ** make sure to choose i386 (x86) for architecture.</li>
+			<li>In the puppy linux bootup it will pause and you need to type xorgwizard to set up the graphics options</li>
+			<li>choose vesa in video wizard</li>
+			<li>1280x800x24 works well to fill up the entire M1Pro display.</li>
+		</ol>
+	<li>Note that this is not a blanket solution, but it is a solution that worked for some people in the past for M series Macs</li>
+	<hr size="3" color="#000000" align="left">
 <dt><h3><font color="black">Kernel Building</font></h3></dt>
 <ul>
 	<li>The goal of this part of the lab will be for you to obtain, build and install Linux kernel from source. (Within the VM environment)</li>
