@@ -1,0 +1,101 @@
+<html><head>
+<style>
+body {
+  background-color: white;
+}
+</style>
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body>
+	<dl>
+		<dt><font size="5" color="black"><b>Lab 1: VM and Kernel Building</b></font>
+	</dt>
+	</dl>
+<dl>
+	<font size="2"><a href="../labs.html">[Back]</a></font>
+<hr size="3" color="#000000" align="left">
+<dt><h3><font color="black">Preliminaries</font></h3></dt>
+
+Tasks for today:
+<ol>
+	<li>Setup VM running Puppy Linux</li>
+	<li>Build Linux Kernel within the VM</li>
+</ol>
+
+<hr size="3" color="#000000" align="left">
+<dt><h3><font color="black">Setting up VM</font></h3></dt>
+<ul>
+	<li>We recommend using VirtualBox as we have tested it both on Linux and Windows host machines. However you're free to use other virtualization software as well but your mileage may vary. </li>
+		<ol>
+			<li>Download the <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> software from their website and follow the installation instructions for your host OS.</li>
+			<li>Download the <a href="https://www.cs.bu.edu/fac/richwest/class_files/cs552.vdi">Puppy Linux VM image</a>.</li>
+			<li>Open up the VirtualBox, and from its main menu click the option to create the new VM. Pick the name you want for your VM and make sure to mark the type as <b>Linux</b> and version as <b>Linux 2.6 (32-bit)</b>.<br>
+				<img src="images/lab1-1.png" width="550" height="400">
+			</li>
+			
+			<li>
+				Next, specify the memory (RAM) size for your VM. The more memory (RAM) VM has the better it will perform, however make sure not to hog all the RAM away from your host machine. <br>
+
+				<img src="images/lab1-2.png" width="550" height="400">
+
+			</li>
+
+			<li>
+				For hard disk, choose the <b>'Use the existing virtual hard disk file'</b> and choose the Puppy Linux VM image you downloaded in step 2.<br>
+
+				<img src="images/lab1-3.png" width="550" height="400">
+			</li>
+
+
+			<li>Click <b>'Create'</b> to finish the process.</li>
+			<li>Once the VM has been created, right-click on it and go to <b>settings</b>. Within settings go to 'Network' and make sure adapter 1 is set to <b>NAT</b>.<br>
+			
+				<img src="images/lab1-6.png" width="550" height="400">
+			</li>
+			<li>Once you are done with network settings you can finally start the VM.</li>
+			<li>When the systems successfully boots up, look at the bottom right corner for networking settings which should be marked by red <b>X</b>, click on it.			<br>
+				<img src="images/lab1-5.png" width="350" height="200">
+			</li>
+			
+			<li>Once in the networking wizzard click on <b>eth0</b> button to access interface configuration for that interface.</li>
+
+			<li>Once inside the <b>eth0</b> configuration screen, first click on <b>'Test eth0'</b> to make sure it can reach connection, afterwards click on <b>'Auto DHCP'</b> to configure the interface settings.</li>
+
+			<li>You should now be connected to the outside world, open up the terminal within Puppy VM and try running <b>'ping google.com'</b> to make sure you are connected.</li>
+
+			<li>If you're connected to the internet, your VM should be all good to go. Congrats!</li>
+
+
+		</ol>
+	</ul>
+
+<hr size="3" color="#000000" align="left">
+<dt><h3><font color="black">Kernel Building</font></h3></dt>
+<ul>
+	<li>The goal of this part of the lab will be for you to obtain, build and install Linux kernel from source. (Within the VM environment)</li>
+	<ol>
+		<li>Under the <a href="../../cs552-lab.html">lab schedule page</a> you will find useful additional referneces for virtualbox, consult them.</li>
+		<li>Open the terminal within Puppy Linux and run <b>'uname -a'</b> command. Write down the output somewhere, it will become useful later.</li>
+		<li>Open up the web browser within Puppy Linux and navigate to our lab schedule page.</li>
+		<li>There you will see a link to download the Linux kernel version 2.6.33.3.</li>
+		<li>Once you've downloaded it, you should have <b>linux-2.6.33.3.tar.gz</b> file on your Puppy machine.</li>
+		<li>Untar the file by running <b>tar -xzvf linux-2.6.33.3.tar.gz</b>, once that is done enter the linux-2.6.33.3 directory.</li>
+		<li>And from here you start configuring and building the kernel!</li>
+	</ol>
+	<li>Build the kernel (Overview): </li>
+		<ul>
+			<li>Create and configure the <b>.config</b> file.</li>
+			<li>Compile the kernel.</li>
+			<li>Compile the modules.</li>
+			<li>Install the modules.</li>
+			<li>Install the kernel.</li>
+			<li>Reboot.</li>
+			<li>Run <b>'uname -a'</b> command again. Any difference?</li>
+		</ul>
+	</ul>
+
+<hr size="1" color="#000000" align="left">
+<p>
+<font size="1">Author: Anton Njavro. Editor: Timothy Borunov</font>
+
+</p></dl></body></html>

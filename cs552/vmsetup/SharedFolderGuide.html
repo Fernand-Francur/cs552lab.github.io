@@ -1,0 +1,50 @@
+<html><head>
+<style>
+body {
+  background-color: white;
+}
+</style>
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body>
+	<dl>
+		<dt><font size="5" color="black"><b>Creating Shared Folders in VirtualBox</b></font>
+	</dt>
+	</dl>
+<dl>
+	<font size="2"><a href="../labs.html">[Back]</a></font>
+<hr size="3" color="#000000" align="left">
+<dt><h3><font color="black">Setting up shared folder</font></h3></dt>
+<ul>
+	This has been tested on Linux host machine, for Windows consult VirtualBox user manual. Link is posted on my lab schedule under resources.
+		<ol>
+			<li>Create a folder on your host machine.</li>
+			<li>Before the machine is running, access its settings and navigate towards "Shared Folders".</li>
+			<li>Click the icon to create a new shared folder, locate the path to folder you just created in step 1. Name the folder as you want it to show up on guest system. Make sure <b>"auto-mount"</b> and <b>"Make Permanent"</b> options are activated. <br>
+				<img src="images/vmsetup-1.png" width="850" height="400">
+			</li>
+			
+			<li>
+				Click OK, and start up the virtual machine. Once inside the VM navigate to top menu options, <b>Devices -> Insert Guest Additions CD image...</b>. Click on it and you should see CD image titled "SR0" appear on Puppy desktop. <br>
+
+				<img src="images/vmsetup-2.png" width="850" height="600">
+
+			</li>
+
+			<li>
+				Click on the "SRO" CD image, and then click on <b>autorun.sh</b> program. Program will open up the terminal and start running, once it's done it'll prompt you to press ENTER.<br>
+
+				<img src="images/vmsetup-3.png" width="850" height="600">
+			</li>
+
+
+			<li>You should be all set. Your shared folder should be created under <b>/media/sf_[YOUR_FOLDER_NAME]</b>. Try creating some files both on host and guest to make sure it's working.</li>
+
+		</ol>
+	</ul>
+
+<hr size="1" color="#000000" align="left">
+<p>
+<font size="1">Author: Anton Njavro. Editor: Timothy Borunov</font>
+
+</p></dl></body></html>
